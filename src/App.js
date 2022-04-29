@@ -4,16 +4,16 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from "./views/Home";
-import About from "./views/About"
-import "./App.scss"
+import Login from "./views/login";
+
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Login />} />
+       
       </Routes>
     </Router>
 
