@@ -1,9 +1,12 @@
-import { Form, Input, Button, Row, Col } from 'antd';
+import { Form, Input, Button, Row, Col ,message} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import {validate_pwd,validate_email} from '../../utils/validate';
+import {getSms} from '../../api/userAPI'
+
 
 const loginForm = (props) => {
    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+         
     };
     const togglefrom = ()=>{
         props.switchform('register')
@@ -28,9 +31,9 @@ const loginForm = (props) => {
                             name="username"
                             rules={[
                                 {
-                                    pattern: /^[1]([3-9])[0-9]{9}$/,
+                                    pattern: validate_email,
                                     required: true,
-                                    message: '请输入正确的手机号码',
+                                    message: '请输入正确的邮箱',
                                 },
                             ]}
                         >
@@ -40,7 +43,7 @@ const loginForm = (props) => {
                             name="password"
                             rules={[
                                 {
-                                    pattern: /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/,
+                                    pattern:validate_pwd,
                                     required: true,
                                     message: '密码至少包含 数字和英文，长度6-20',
                                 },

@@ -19,6 +19,7 @@ class Login extends Component {
         const { formType } = this.state
         return (
             <>
+                <h1 className="heading">人事后台管理系统</h1>
                 {
                 formType === 'login' 
                 ? <LoginForm switchform={this.switchform} /> 
