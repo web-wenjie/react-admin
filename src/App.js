@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Index from "./views/index";
 import Login from "./views/login";
 
 
@@ -13,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-       
+        <Route path="/index" element={<Index/> } />
       </Routes>
     </Router>
 

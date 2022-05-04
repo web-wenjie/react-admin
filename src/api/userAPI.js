@@ -14,3 +14,10 @@ export const getSms = async (data) => {
     var res = await $api.post('getSms/', data)
     return res
 }
+
+//登录
+export const Login = async (data) => {
+
+    var res = await $api.post('login/', data)
+    return res
+}
